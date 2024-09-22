@@ -4,8 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Bean定義例 -->
-    <bean id="stuDao" class="com.kazuki.hello.dao.impl.StuDaoImpl" scope="singleton" />
-    
+    <!-- Bean定義 -->
+    <bean id="stuDao" class="com.kazuki.hello.dao.impl.StuDaoImpl" scope="singleton"/>
+
+    <bean id="stuService" class="com.kazuki.hello.service.impl.StuServiceImpl">
+        <!-- StuDao を StuService に注入 -->
+        <constructor-arg name="stuDao" ref="stuDao"/>
+    </bean>
 
 </beans>
