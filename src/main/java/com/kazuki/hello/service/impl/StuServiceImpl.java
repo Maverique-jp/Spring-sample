@@ -25,8 +25,8 @@ public class StuServiceImpl implements StuService {
     this.stuDao = stuDao;
     }
 
-    public StuService(){
-        
+    public StuServiceImpl(){
+
     }
 
     @Override

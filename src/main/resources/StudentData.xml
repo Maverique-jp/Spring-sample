@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+           
+                           
+     <bean id="stu01" class="com.kazuki.hello.global.Student">
+        <property name="name" value="mori"/>
+        <property name="age" value="50"/>
+        <property name="score" value="99"/>
+    </bean>
+    <bean id="stu02" class="com.kazuki.hello.global.Student">
+        <property name="name" value="kumi"/>
+        <property name="age" value="18"/>
+        <property name="score" value="100"/>
+    </bean>
+    <bean id="stu03" class="com.kazuki.hello.global.Student">
+        <property name="name" value="jyou"/>
+        <property name="age" value="20"/>
+        <property name="score" value="95"/>
+    </bean>
+                           
+                           
+                           
+                           
+</beans>
