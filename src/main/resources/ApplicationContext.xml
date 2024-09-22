@@ -5,11 +5,54 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Bean定義 -->
-    <bean id="stuDao" class="com.kazuki.hello.dao.impl.StuDaoImpl" scope="singleton"/>
+    <!-- <bean id="stuDao" class="com.kazuki.hello.dao.impl.StuDaoImpl" scope="singleton"/> -->
+    <!-- //set -->
+
+    <import resource="StudentData.xml"/>
+    <bean id="stuDao" class="com.kazuki.hello.dao.impl.StuDaoImpl" scope="singleton">
+        <property name="stuName" value="Kazuki"/>
+        <property name="age" value="18"/>
+        <property name="score" value="99.9"/>
+
+        <property name="stuList">
+        <list>
+            <value>mori</value>
+            <value>kumi</value>
+            <value>jyou</value>
+        </list>
+        </property>
+
+        <property name = "stuMap">
+            <map>
+                <entry key="STU01" value-ref="stu01"/>
+                <entry key="STU02" value-ref="stu02"/>
+                <entry key="STU03" value-ref="stu03"/>
+            </map>
+        </property>
+
+
+        <property name = "prop">
+            <props>
+                <prop key="mori">mori</prop>
+                <prop key="kumi">kumi</prop>
+                <prop key="jyou">jyou</prop>
+            </props>
+        </property>
+
+        
+
+
+    </bean>
+
+ 
+
 
     <bean id="stuService" class="com.kazuki.hello.service.impl.StuServiceImpl">
         <!-- StuDao を StuService に注入 -->
         <constructor-arg name="stuDao" ref="stuDao"/>
+
     </bean>
+
+    
 
 </beans>
